@@ -1,4 +1,3 @@
-# FROM ubuntu:xenial
 FROM bvlc/caffe:cpu
 RUN apt-get update && \
     apt-get install -y \

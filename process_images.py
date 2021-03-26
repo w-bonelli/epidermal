@@ -2,6 +2,8 @@
 # CLI tool to count stomata on images and output results in a CSV file.
 
 import os
+import matplotlib
+matplotlib.use( 'Agg' )
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import csv
@@ -12,7 +14,6 @@ from image_measures import get_image_measures, image_measures
 
 
 all_results_fields = ['image_filename', 'count', 'margin', 'scale', 'positions'] + image_measures
-
 
 # Load network according to args
 def load_net(args):
