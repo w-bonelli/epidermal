@@ -1,8 +1,10 @@
 name: Stomata Counter
+author: Karl Fetter, Sven Eberhardt
 public: True
 clone: False
+doi: 10.1111/nph.15892
 image: docker://wbonelli/epidermal
-commands: python2.7 /opt/epidermal/process_images.py --weights-filename /opt/epidermal/model/sc_feb2019.caffemodel --proto-filename /opt/epidermal/model/sc_feb2019.prototxt $INPUT
+commands: python /opt/epidermal/process_images.py --weights-filename /opt/epidermal/model/sc_feb2019.caffemodel --proto-filename /opt/epidermal/model/sc_feb2019.prototxt --csv-output-filename output.csv --scale $SCALE --prob-area-threshold $THRESHOLD $INPUT
 logo: stomata.png
 params:
   - name: scale
@@ -18,7 +20,7 @@ params:
     step: 0.001
     default: 0.982
 resources:
-  time: "01:00:00"
-  mem: "1GB"
-  processes: 2
+  time: "00:10:00"
+  mem: "5GB"
+  processes: 1
   cores: 1
