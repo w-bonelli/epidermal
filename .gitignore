@@ -100,5 +100,6 @@ cnn/out
 cnn/
 
 # misc
+output/
 model/
 model.zip
